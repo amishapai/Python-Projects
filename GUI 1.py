@@ -39,8 +39,7 @@ def get_input():
 def exit_app():
     root.destroy()
 
-#label = tk.Label(root, text="Formatted Label", font=("Helvetica", 16, "bold"), fg="blue", bg="yellow", anchor="center")
-#button = tk.Button(root, text="Click me!", font=("Arial", 12), fg="white", bg="green", relief="raised", width=15)    
+   
 #create root window
 root = tk.Tk()
 lbl = tk.Label(root, text = "Enter a Number", font=("Times New Roman", 21, "bold"), fg="orange", bg="#4B0082", anchor="center")
