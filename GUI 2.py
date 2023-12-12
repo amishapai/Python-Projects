@@ -6,7 +6,6 @@ root = tk.Tk()
 # Entry for number of elements
 num_elements_label = tk.Label(root, text="Enter the number of elements:",font=("Times New Roman", 18, "italic"), fg="orange",bg= "#4B0082", anchor="center")
 num_elements_label.pack(pady=10)
-
 num_elements_entry = tk.Entry(root)
 num_elements_entry.pack(pady=10)
 
@@ -57,14 +56,40 @@ def process_element(max_elements):
             element_entry.destroy()
             enter_button.destroy()
             messagebox.showinfo("Information", "All elements entered.")
+            choice()
         else:
             element_entry.delete(0, tk.END)
     except ValueError:
         messagebox.showerror("Error", "Please enter a valid integer.")
 
+def choice():
+            global listlabel, choicelabel, choiceentry, choicebutton
+            global ch
+            try:
+                listlabel=tk.Label(root, text=f"List is: {lists}",font=("Times New Roman", 18, "italic"), fg="orange",bg= "#4B0082", anchor="center")    
+                listlabel.pack(pady=10)
+                choicelabel=tk.Label(root, text="Choose operation: \n 1. Append Value \n 2. Insert Position \n 3. Remove value \n 4. Display \n 0. Exit",font=("Times New Roman", 12), fg="orange",bg= "#4B0082", anchor="center")
+                choicelabel.pack(pady=10)
+                choiceentry = tk.Entry(root)
+                choiceentry.pack(pady=10)
+                choicebutton = tk.Button(root, text="Enter", command= operations)
+                choicebutton.pack(pady=10)
+                ch= int(choiceentry.get())
+            except ValueError:
+                messagebox.showerror("Error", "Please enter a valid integer.")
+                #choice()
+
+def operations():
+            
+            listlabel.destroy()
+            choicelabel.destroy()
+            choiceentry.destroy()
+            choicebutton.destroy()
+      
 root.title("List Operation")
+
 
 root.configure(bg="#4B0082")
 # Set geometry (widthxheight)
-root.geometry('500x250')
+root.geometry('500x300')
 root.mainloop()
