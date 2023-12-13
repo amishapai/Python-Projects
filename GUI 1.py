@@ -5,7 +5,8 @@ def prime(num):
     l=True
     if num<0:
         num = -1* num
-        
+    if num==1:
+        return("not applicable")  
     a=[]
     b=[]
     prime=1
