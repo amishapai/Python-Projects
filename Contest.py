@@ -46,7 +46,7 @@ for i in range (0,num):
 
 
 
-
+'''
 l=['a','b','c','d','e','f','g','h']
 r=[1,2,3,4,5,6,7,8]
 num=int(input())
@@ -64,6 +64,37 @@ for j in range (0,num):
             print(str(i)+str(pos[1]))
 
  
+'''
+num=int(input())
+for i in range (0,num):
+    count=0
+    n=int(input())
+    dig=input()
+    dig= ''.join(list(map(lambda x: x.strip(), dig.split())))
+    count=0
+    for j in range (0,n-1):
+        for i in range (j+1,n):
+            if (int(dig[j])==int(dig[i])):
+                count+=1
+    if count>n:
+        print(n)
+    else:
+        print(count)
+num=int(input())
+for i in range (0,num):
+    count=0
+    n=int(input())
+    dig=input()
+    dig= ''.join(list(map(lambda x: x.strip(), dig.split())))
+    cop=list(dig)
+    count=0
+    for k in cop:
+        cop.remove(k)
+    for j in range (0,n-1):
+        for i in range (j+1,n):
+            if (int(dig[j])==int(dig[i])):
+                count+=1
+
 
 
 
